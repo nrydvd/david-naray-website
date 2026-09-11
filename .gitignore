@@ -1,0 +1,6 @@
+# Local and sensitive files
+private.txt
+.DS_Store
+
+# Editor settings
+.vscode/
