@@ -54,6 +54,6 @@ if (form) {
 
     formStatus.textContent = 'A levelezőprogram megnyílt. Kérlek, küldd el az üzenetet a megjelenő levélben.';
     formStatus.classList.remove('is-error');
-    window.location.href = `mailto:naray.david92@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:david.naray92@gmail.com?subject=${subject}&body=${body}`;
   });
 }

@@ -52,6 +52,7 @@
         <h3>3. A kezelt személyes adatok köre</h3>
         <ul><li>név;</li><li>vállalkozás neve;</li><li>e-mail-cím;</li><li>a kiválasztott szolgáltatási kategória;</li><li>az üzenet tartalma;</li><li>az űrlap használatához kapcsolódó technikai adatok, amennyiben azokat a weboldal vagy a kapcsolódó szolgáltatók kezelik.</li></ul>
         <p>Az üzenetben kérjük, ne adjon meg olyan különleges vagy más, a kapcsolatfelvételhez nem szükséges adatot, amelynek kezelésére nincs szükség.</p>
+        <p>A <code>pages/landing-pages/</code> külön bemutatóoldal űrlapja ugyanezen kapcsolatfelvételi célhoz nevet, e-mail-címet, vállalkozás/projekt nevet, kiválasztott szolgáltatást és üzenetet kér. Az űrlap a böngésző levelezőprogramját nyitja meg <code>mailto:</code> hivatkozással; a projekt kódja ehhez az űrlaphoz nem használ Web3Forms API-hívást.</p>
 
         <h3>4. Az adatkezelés jogalapjai</h3>
         <p>A jogalap mindig az adott célhoz igazodik:</p>
@@ -65,16 +66,14 @@
 
         <h3>6. Adatfeldolgozók és külső szolgáltatók</h3>
         <h4>Web3Forms</h4>
-        <p>A kapcsolatfelvételi űrlap technikai feldolgozására használjuk. A szolgáltató az űrlapon megadott adatokat az üzenet továbbításához és a szolgáltatás működtetéséhez kezelheti. A Web3Forms aktuális adatkezelési és megőrzési feltételei a szolgáltató dokumentációjában találhatók; a jelen tájékoztató nem állapít meg a szolgáltatóra vonatkozó konkrét megőrzési időt.</p>
+        <p>A főoldal kapcsolatfelvételi űrlapjának technikai feldolgozására használjuk. A böngésző JavaScriptje POST kérést küld a <code>https://api.web3forms.com/submit</code> végpontra. A kód a név, vállalkozás neve, e-mail-cím, kiválasztott szolgáltatási kategória, üzenet és a kapcsolatfelvételhez tartozó előre kitöltött mezők (például tárgy és címzett) adatait adja át. A szolgáltató ezeket az üzenet továbbításához és a szolgáltatás működtetéséhez kezelheti. A Web3Forms aktuális adatkezelési, megőrzési és nemzetközi adattovábbítási feltételei a szolgáltató dokumentációjában találhatók; konkrét szolgáltatói garanciát vagy megőrzési időt a projekt nem bizonyít.</p>
         <h4>GitHub Pages</h4>
         <p>A weboldal tárhelyét és közzétételét biztosítja. A kiszolgálás során a szolgáltató a webes kérésekhez kapcsolódó technikai adatokat saját feltételei szerint kezelheti.</p>
-        <h4>Cloudflare</h4>
-        <p>A domain DNS-kiszolgálásához, valamint a ténylegesen konfigurált hálózati és e-mail routing szolgáltatásokhoz kapcsolódóan használjuk. A szolgáltató szerepe és az általa kezelt technikai adatok a ténylegesen bekapcsolt Cloudflare-funkcióktól és aktuális dokumentációjától függnek.</p>
         <h4>Google Fonts</h4>
-        <p>A weboldal betűtípusai jelenleg külső Google Fonts-betöltéssel jelennek meg. A böngésző a betűtípusok betöltésekor technikai kapcsolatot létesít a Google szervereivel, amely a kéréshez kapcsolódó technikai adatok kezelésével járhat.</p>
+        <p>A weboldal betűtípusai jelenleg külső Google Fonts-betöltéssel jelennek meg. A Google Fonts hivatalos tájékoztatása szerint a Fonts API nem állít be és nem naplóz cookie-kat, ugyanakkor a böngésző a betűtípusok betöltésekor technikai HTTP-kérést küld, amelyben többek között IP-cím, kért URL és böngészőre utaló fejlécek szerepelhetnek. A projekt jelenleg nem tartalmazza a fontok helyi másolatát; helyi betöltés csak külön fontfájlok és licenc/technikai ellenőrzés után lenne indokolt.</p>
 
         <h3>7. EGT-n kívüli adattovábbítás</h3>
-        <p>Egyes külső szolgáltatók az Európai Gazdasági Térségen kívül is kezelhetnek adatokat, illetve az adatokhoz onnan is hozzáférhetnek. Ez különösen a Web3Forms, a GitHub, a Cloudflare és a Google szolgáltatásainál merülhet fel a szolgáltató aktuális működése és dokumentációja alapján.</p>
+        <p>Egyes külső szolgáltatók az Európai Gazdasági Térségen kívül is kezelhetnek adatokat, illetve az adatokhoz onnan is hozzáférhetnek. Ez különösen a Web3Forms, a GitHub Pages és a Google Fonts esetében lehet releváns a szolgáltató aktuális működése és dokumentációja alapján. A konkrét adattovábbítási mechanizmus, garancia és megőrzési idő külső dokumentációból vagy jogi ellenőrzésből állapítható meg.</p>
         <p>Az ilyen adattovábbítás feltételeit és az alkalmazott garanciákat az adott szolgáltató mindenkor hatályos adatkezelési tájékoztatója, szerződéses dokumentációja és az alkalmazandó jog alapján kell megítélni. Konkrét megfelelőségi mechanizmus vagy jogi garancia csak az adott szolgáltató aktuális dokumentációja alapján állítható.</p>
 
         <h3>8. Az érintettek jogai</h3>
@@ -88,7 +87,7 @@
         <p>Az adatkezelő jelenleg nem alkalmaz automatizált döntéshozatalt és nem végez profilalkotást.</p>
 
         <h3>11. Sütik és hasonló technológiák</h3>
-        <p>A weboldal kódja jelenleg nem tartalmaz Google Analytics-et, Meta Pixelt, reklámkövetést vagy más marketingcélú trackinget. A cookie-üzenet elfogadásának megjegyzésére a böngésző helyi tárolóját (localStorage) használja; ez nem azonos a marketingcélú követéssel. A böngésző és a tárhelyszolgáltatók a weboldal kiszolgálásához szükséges technikai adatokat saját működésük szerint kezelhetik.</p>
+        <p>A weboldal kódja jelenleg nem tartalmaz Google Analytics-et, Meta Pixelt, reklámkövetést vagy más marketingcélú trackinget. A tájékoztató banner „Rendben” választásának megjegyzésére a böngésző helyi tárolóját (localStorage) használja; ez nem cookie és nem marketingcélú követés. A Google Fonts külön, külső HTTP-kapcsolatait a jelen tájékoztató 6. pontja ismerteti. A böngésző és a tárhelyszolgáltatók a weboldal kiszolgálásához szükséges technikai adatokat saját működésük szerint kezelhetik.</p>
 
         <h3>12. Adatbiztonság</h3>
         <p>Az adatkezelő a rendelkezésére álló és a szolgáltatások által biztosított technikai és szervezési intézkedésekkel törekszik az adatok védelmére, a hozzáférések korlátozására és a továbbított adatok biztonságára. Az adatbiztonság a használt tárhely-, űrlap- és hálózati szolgáltatók intézkedéseitől is függ.</p>

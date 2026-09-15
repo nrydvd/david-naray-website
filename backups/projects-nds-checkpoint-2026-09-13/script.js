@@ -26,7 +26,7 @@ function removeArrowCharacters(value){if(Array.isArray(value))return value.map(r
 Object.assign(content,removeArrowCharacters(content));
 content.hu.projects[1][0] = 'Lúme';
 content.en.projects[1][0] = 'Lúme';
-content.hu.projects = [['ÜZLETI WEBOLDAL','','pages/Business-Website/index.html'],['LANDING PAGE','','pages/landing-pages/index.html'],['EGYEDI RENDSZEREK','','https://davidnaray.com/lume'],['KOMPLETT RENDSZEREK','','https://davidnaray.com/ingatlan'],['NDSYS','']];
+content.hu.projects = [['ÜZLETI WEBOLDAL','','https://sacra-soul-retreat.base44.app/'],['LANDING PAGE','','https://lume-skin.base44.app/'],['EGYEDI RENDSZEREK','','pages/landing-pages/index.html'],['KOMPLETT RENDSZEREK',''],['NDSYS','']];
 content.en.projects = content.hu.projects;
 let currentLanguage='hu';
 const $=selector=>document.querySelector(selector);
