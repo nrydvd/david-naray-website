@@ -407,10 +407,10 @@ const translations = {
 };
 
 const moduleLinks = {
-  landing: "/landing",
-  web: "/web",
-  system: "/egyedi",
-  business: "/komplett"
+  landing: "/pages/landing-pages/index.html",
+  web: "/pages/Business-Website/index.html",
+  system: "/pages/egyedi-rendszerek/",
+  business: "/pages/Komplett-rendszerek/"
 };
 
 let currentLang = "en";
