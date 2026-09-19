@@ -79,9 +79,6 @@ const galleries = {
         "assets/zoldkert/07.jpg",
         "assets/zoldkert/08.jpg",
         "assets/zoldkert/09.jpg",
-        "assets/zoldkert/10.jpg",
-        "assets/zoldkert/11.jpg",
-        "assets/zoldkert/12.jpg"
     ]
 
 };
