@@ -62,11 +62,6 @@ const galleries = {
         "assets/real-estate/05.jpg",
         "assets/real-estate/06.jpg",
         "assets/real-estate/07.jpg",
-        "assets/real-estate/08.jpg",
-        "assets/real-estate/09.jpg",
-        "assets/real-estate/10.jpg",
-        "assets/real-estate/11.jpg",
-        "assets/real-estate/12.jpg"
     ],
 
     "zoldkert": [
