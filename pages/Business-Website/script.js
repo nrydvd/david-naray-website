@@ -169,8 +169,64 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   sacraLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      link.classList.add("business-website-loading");
-    });
+  link.addEventListener("click", () => {
+    link.classList.add("business-website-loading");
   });
+});
+
+
+/* =====================================================
+   SACRA369 — IMAGE LIGHTBOX
+===================================================== */
+
+const sacraImage = document.querySelector(
+  ".business-website-reference-image img"
+);
+
+if (sacraImage) {
+  sacraImage.addEventListener("click", () => {
+
+    const overlay = document.createElement("div");
+
+    overlay.className = "business-website-image-lightbox";
+
+    overlay.innerHTML = `
+      <div class="business-website-lightbox-content">
+        <button class="business-website-lightbox-close" aria-label="Bezárás">
+          ×
+        </button>
+
+        <img
+          src="${sacraImage.src}"
+          alt="${sacraImage.alt}"
+        >
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    requestAnimationFrame(() => {
+      overlay.classList.add("is-visible");
+    });
+
+    const closeLightbox = () => {
+      overlay.classList.remove("is-visible");
+
+      setTimeout(() => {
+        overlay.remove();
+      }, 250);
+    };
+
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) {
+        closeLightbox();
+      }
+    });
+
+    overlay
+      .querySelector(".business-website-lightbox-close")
+      .addEventListener("click", closeLightbox);
+  });
+}
+
 });

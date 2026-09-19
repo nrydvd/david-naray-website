@@ -322,3 +322,115 @@ main { overflow: clip; }
   html { scroll-behavior: auto; }
   .business-website-reveal, .business-website-visual-card, .business-website-reference-window, .business-website-button, .business-website-quality-item { opacity: 1; transform: none; transition: none; }
 }
+/* =====================================================
+   SACRA369 — REFERENCE IMAGE
+===================================================== */
+
+.business-website-reference-image {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+.business-website-reference-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  transition: transform 0.35s ease;
+}
+
+.business-website-reference-image:hover img {
+  transform: scale(1.02);
+}
+/* =====================================================
+   SACRA369 — IMAGE LIGHTBOX
+===================================================== */
+
+.business-website-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+.business-website-image-lightbox.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.business-website-lightbox-content {
+  position: relative;
+
+  max-width: 1200px;
+  max-height: 90vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-website-lightbox-content img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 90vh;
+
+  width: auto;
+  height: auto;
+
+  border-radius: 14px;
+
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.business-website-lightbox-close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+
+  font-size: 28px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.business-website-lightbox-close:hover {
+  transform: scale(1.08);
+  background: #fff;
+}
