@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Landing oldalak bemutatója – mi az a landing oldal, miért fontos és hogyan épül fel egy jól működő céloldal." />
+    <title>Dávid Náray — Landing oldalak</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="landing-page-body">
+    <header class="landing-page-header">
+      <div class="landing-page-shell landing-page-header-inner">
+        <a class="landing-page-brand" href="../index.html" aria-label="Dávid Náray kezdőlap">
+          <span class="landing-page-brand-mark" aria-label="Dávid Náray logó">DN</span>
+          <span>Dávid Náray</span>
+        </a>
+
+        <nav class="landing-page-nav" aria-label="Fő navigáció">
+          <a href="#about">Mi az a landing oldal?</a>
+          <a href="#why">Miért működik?</a>
+          <a href="#structure">Felépítés</a>
+          <a href="#process">Hogyan készül?</a>
+          <a href="#contact">Kapcsolat</a>
+        </nav>
+
+        <a class="landing-page-header-cta" href="#contact">Kapcsolat</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="landing-page-hero landing-page-shell">
+        <div class="landing-page-hero-copy landing-page-reveal">
+          <p class="landing-page-kicker">Landing oldalak</p>
+          <h1>
+            Egy jó landing oldal nem csak bemutat.<br />
+            Cselekvésre vezet.
+          </h1>
+          <p class="landing-page-lead">
+            Egy célra épített oldal, amely egyértelműen bemutat egy terméket,
+            szolgáltatást vagy ajánlatot — és végigvezeti rajta a látogatót.
+          </p>
+          <div class="landing-page-hero-actions">
+            <a class="landing-page-button landing-page-button-primary" href="#about">Fedezd fel</a>
+            <a class="landing-page-button landing-page-button-secondary" href="#structure">Mutasd, hogyan működik</a>
+          </div>
+        </div>
+
+        <div class="landing-page-hero-visual landing-page-reveal landing-page-reveal-delay" aria-label="Landing oldal vizualizáció">
+          <div class="landing-page-orb"></div>
+          <div class="landing-page-visual-card">
+            <div class="landing-page-visual-header">
+              <span class="landing-page-visual-badge">DN</span>
+              <span class="landing-page-visual-label">landing page</span>
+            </div>
+            <div class="landing-page-visual-copy">
+              <span>Ideas</span>
+              <span>into useful</span>
+              <span>things.</span>
+            </div>
+            <div class="landing-page-visual-meta">
+              <span>01 / 05</span>
+              <small>STRATEGY<br />BEFORE<br />EXECUTION</small>
+            </div>
+          </div>
+          <div class="landing-page-visual-line landing-page-line-one"></div>
+          <div class="landing-page-visual-line landing-page-line-two"></div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-section-text" id="about">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">01 <span>—</span> MI AZ A LANDING OLDAL?</div>
+          <h2>Mi az a landing oldal?</h2>
+        </div>
+
+        <div class="landing-page-about-grid">
+          <div class="landing-page-about-copy landing-page-reveal">
+            <p>
+              Nem minden weboldalnak ugyanaz a feladata. Egy hagyományos weboldal sokféle
+              információt kínál. Egy landing oldal ezzel szemben egy konkrét cél köré épül.
+            </p>
+            <p>
+              Használható például szolgáltatás bemutatására, termék értékesítésére,
+              ajánlatkérésre, időpontfoglalásra, feliratkozásra vagy kampány céloldalaként.
+            </p>
+          </div>
+
+          <div class="landing-page-showcase landing-page-reveal landing-page-reveal-delay">
+            <div class="landing-page-showcase-panel">
+              <div class="landing-page-showcase-top">
+                <span class="landing-page-dot"></span>
+                <span class="landing-page-dot"></span>
+                <span class="landing-page-dot"></span>
+              </div>
+              <div class="landing-page-showcase-content">
+                <div class="landing-page-showcase-badge">CÉL</div>
+                <h3>Olyan oldal, amely a döntéshez vezet.</h3>
+                <ul>
+                  <li>Szolgáltatás bemutatása</li>
+                  <li>Ajánlat elkülönítése</li>
+                  <li>Kapcsolatfelvétel</li>
+                  <li>Feliratkozás</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-section-principles" id="why">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">02 <span>—</span> NEM ATTÓL MŰKÖDIK, HOGY TÖBB VAN RAJTA.</div>
+          <h2>Nem attól működik, hogy több van rajta.</h2>
+        </div>
+
+        <div class="landing-page-principles">
+          <div class="landing-page-principle landing-page-reveal">
+            <span class="landing-page-principle-number">01</span>
+            <div>
+              <p class="landing-page-principle-label">Figyelem</p>
+              <h3>Az első néhány másodpercben világos, miről szól az oldal.</h3>
+            </div>
+          </div>
+
+          <div class="landing-page-principle landing-page-reveal">
+            <span class="landing-page-principle-number">02</span>
+            <div>
+              <p class="landing-page-principle-label">Érthetőség</p>
+              <h3>A látogató gyorsan megérti, mit kínál és miért lehet számára fontos.</h3>
+            </div>
+          </div>
+
+          <div class="landing-page-principle landing-page-reveal">
+            <span class="landing-page-principle-number">03</span>
+            <div>
+              <p class="landing-page-principle-label">Bizalom</p>
+              <h3>A megfelelő információk és bizonyítékok segítenek a döntésben.</h3>
+            </div>
+          </div>
+
+          <div class="landing-page-principle landing-page-reveal">
+            <span class="landing-page-principle-number">04</span>
+            <div>
+              <p class="landing-page-principle-label">Cselekvés</p>
+              <h3>Az oldal egyértelműen elvezeti a látogatót a következő lépéshez.</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-structure" id="structure">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">03 <span>—</span> EGY LANDING OLDAL FELÉPÍTÉSE</div>
+          <h2>Egy landing oldal felépítése</h2>
+        </div>
+
+        <div class="landing-page-roadmap landing-page-reveal">
+          <div class="landing-page-roadmap-line"></div>
+
+          <div class="landing-page-step landing-page-step-1">
+            <span class="landing-page-step-index">01</span>
+            <div class="landing-page-step-content">
+              <p>Figyelem</p>
+              <strong>Hero</strong>
+            </div>
+          </div>
+
+          <div class="landing-page-step landing-page-step-2">
+            <span class="landing-page-step-index">02</span>
+            <div class="landing-page-step-content">
+              <p>Érdeklődés</p>
+              <strong>Probléma / igény</strong>
+            </div>
+          </div>
+
+          <div class="landing-page-step landing-page-step-3">
+            <span class="landing-page-step-index">03</span>
+            <div class="landing-page-step-content">
+              <p>Megoldás</p>
+              <strong>Ajánlat és előnyök</strong>
+            </div>
+          </div>
+
+          <div class="landing-page-step landing-page-step-4">
+            <span class="landing-page-step-index">04</span>
+            <div class="landing-page-step-content">
+              <p>Bizalom</p>
+              <strong>Bizonyítékok / referencia</strong>
+            </div>
+          </div>
+
+          <div class="landing-page-step landing-page-step-5">
+            <span class="landing-page-step-index">05</span>
+            <div class="landing-page-step-content">
+              <p>Döntés</p>
+              <strong>CTA</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-quality" id="quality">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">04 <span>—</span> MITŐL LESZ IGAZÁN JÓ?</div>
+          <h2>Egy jó landing oldal nem attól jó, hogy sok minden van rajta.</h2>
+        </div>
+
+        <div class="landing-page-quality-grid">
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>01</span>
+            <p>Egyértelmű üzenet</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>02</span>
+            <p>Logikus felépítés</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>03</span>
+            <p>Megfelelő vizuális hierarchia</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>04</span>
+            <p>Könnyű olvashatóság</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>05</span>
+            <p>Mobilbarát működés</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>06</span>
+            <p>Gyors és stabil technikai működés</p>
+          </div>
+          <div class="landing-page-quality-item landing-page-reveal">
+            <span>07</span>
+            <p>Minden elemnek van célja</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-process" id="process">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">05 <span>—</span> AZ ÖTLETTŐL A MŰKÖDŐ OLDALIG</div>
+          <h2>Az ötlettől a működő oldalig</h2>
+        </div>
+
+        <div class="landing-page-process-grid">
+          <div class="landing-page-process-item landing-page-reveal">
+            <span class="landing-page-process-number">01</span>
+            <h3>Megértés</h3>
+            <p>Megismerjük az ajánlatot és a célközönséget.</p>
+          </div>
+          <div class="landing-page-process-item landing-page-reveal">
+            <span class="landing-page-process-number">02</span>
+            <h3>Struktúra</h3>
+            <p>Felépítjük az oldal logikáját.</p>
+          </div>
+          <div class="landing-page-process-item landing-page-reveal">
+            <span class="landing-page-process-number">03</span>
+            <h3>Design</h3>
+            <p>Kialakítjuk a vizuális világot és az interfészt.</p>
+          </div>
+          <div class="landing-page-process-item landing-page-reveal">
+            <span class="landing-page-process-number">04</span>
+            <h3>Fejlesztés</h3>
+            <p>Működő, reszponzív oldallá alakítjuk.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-reference" id="reference">
+        <div class="landing-page-section-heading landing-page-reveal">
+          <div class="landing-page-index">06 <span>—</span> ÍGY NÉZ KI A GYAKORLATBAN.</div>
+          <h2>Így néz ki a gyakorlatban.</h2>
+        </div>
+
+        <div class="landing-page-reference-showcase landing-page-reveal">
+          <div class="landing-page-reference-window">
+            <div class="landing-page-window-toolbar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="landing-page-window-content">
+              <aside class="landing-page-window-sidebar">
+                <div class="landing-page-sidebar-brand">DN</div>
+                <span>Üzenet</span>
+                <span>Előnyök</span>
+                <span>Folyamat</span>
+                <span>Kapcsolat</span>
+              </aside>
+
+              <div class="landing-page-window-main">
+                <div class="landing-page-window-copy">
+                  <p class="landing-page-window-tag">CÉL</p>
+                  <h3>Világos ajánlat, logikus útvonal, tisztán megérthető döntés.</h3>
+                  <p>
+                    Ez a bemutató oldal egyetlen cél köré épül: egy ajánlat világos bemutatása
+                    és a látogató végigvezetése a következő lépésig.
+                  </p>
+                </div>
+
+                <div class="landing-page-window-cta">
+                  <span>Kapcsolat</span>
+                  <strong>Beszéljük át az ötletet.</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="landing-page-mobile-preview">
+            <div class="landing-page-phone">
+              <div class="landing-page-phone-notch"></div>
+              <div class="landing-page-phone-content">
+                <span class="landing-page-phone-tag">LANDING</span>
+                <h4>Végigvezetés a célig.</h4>
+                <div class="landing-page-phone-block"></div>
+                <div class="landing-page-phone-block short"></div>
+                <button type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Kapcsolat</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-final-cta" id="contact">
+        <div class="landing-page-final-box landing-page-reveal">
+          <p class="landing-page-kicker">Készen állsz?</p>
+          <h2>Szeretnél egy landing oldalt?</h2>
+          <p>
+            Ha van egy szolgáltatásod, terméked vagy ötleted, amit szeretnél érthetően és
+            igényesen bemutatni, beszéljük át.
+          </p>
+          <a class="landing-page-button landing-page-button-primary" href="mailto:naray.david92@gmail.com?subject=Landing%20oldal%20kapcsolat">Kapcsolat</a>
+        </div>
+      </section>
+
+      <section class="landing-page-section landing-page-shell landing-page-form-section" aria-labelledby="landing-page-form-heading">
+        <div class="landing-page-form-wrap landing-page-reveal">
+          <div class="landing-page-form-copy">
+            <p class="landing-page-kicker">Jelentkezés</p>
+            <h2 id="landing-page-form-heading">Szeretnél egy landing oldalt?</h2>
+            <p>
+              Ha van egy szolgáltatásod, terméked vagy ötleted, amit szeretnél érthetően és
+              igényesen bemutatni, beszéljük át.
+            </p>
+          </div>
+
+          <form id="landing-page-form" class="landing-page-form" novalidate>
+            <div class="landing-page-field-row">
+              <label>
+                <span>Név</span>
+                <input type="text" name="name" placeholder="Név" required />
+              </label>
+              <label>
+                <span>E-mail</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+
+            <div class="landing-page-field-row">
+              <label>
+                <span>Vállalkozás / projekt</span>
+                <input type="text" name="company" placeholder="Vállalkozás vagy projekt neve" />
+              </label>
+              <label>
+                <span>Miben tudok segíteni?</span>
+                <select name="service">
+                  <option value="Landing oldal">Landing oldal</option>
+                  <option value="Weboldal">Weboldal</option>
+                  <option value="AI megoldás">AI megoldás</option>
+                  <option value="Automatizáció">Automatizáció</option>
+                  <option value="Más">Más</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              <span>Üzenet</span>
+              <textarea name="message" rows="5" placeholder="Röviden meséld el, mire lenne szükséged." required></textarea>
+            </label>
+
+            <div class="landing-page-form-actions">
+              <button type="submit" class="landing-page-button landing-page-button-primary">Kapcsolatfelvétel</button>
+              <p id="landing-page-form-status" class="landing-page-form-status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="landing-page-footer">
+      <div class="landing-page-shell landing-page-footer-inner">
+        <a class="landing-page-brand" href="../index.html">
+          <span class="landing-page-brand-mark" aria-label="Dávid Náray logó">DN</span>
+          <span>Dávid Náray</span>
+        </a>
+        <p>Digitális megoldások kisvállalkozásoknak.</p>
+        <div class="landing-page-footer-links">
+          <a href="#about">Mi az a landing oldal?</a>
+          <a href="#why">Miért működik?</a>
+          <a href="#process">Hogyan készül?</a>
+          <a href="mailto:naray.david92@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="landing-page-shell landing-page-footer-bottom">
+        <span>© <span id="landing-page-year">2026</span> Dávid Náray</span>
+        <span>Made with intention.</span>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
