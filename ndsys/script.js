@@ -409,8 +409,8 @@ const translations = {
 const moduleLinks = {
   landing: "landing-pages",
   web: "Business-Website",
-  system: "egyedi-rendszerek",
-  business: "Komplett-rendszerek"
+  system: "Egyedi-Rendszerek",
+  business: "Komplett-Rendszerek"
 };
 
 let currentLang = "en";
