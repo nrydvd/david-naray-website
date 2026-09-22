@@ -1,0 +1,2477 @@
+/* ============================================================
+   DAVID NARAY — KOMPLETT RENDSZER
+   Designer foundation
+   ============================================================ */
+
+:root {
+    --bg: #f5f1e9;
+    --bg-soft: #eee9df;
+    --surface: #faf8f3;
+    --surface-strong: #ffffff;
+    --text: #20231f;
+    --muted: #73766f;
+    --line: rgba(32, 35, 31, 0.14);
+    --accent: #65735d;
+    --accent-dark: #4d5947;
+
+    --max-width: 1180px;
+    --section-space: 150px;
+    --radius: 18px;
+
+    --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Helvetica, Arial, sans-serif;
+    --font-serif: "Playfair Display", Georgia, serif;
+    --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+.container {
+    width: min(calc(100% - 48px), var(--max-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding: var(--section-space) 0;
+}
+
+.section--soft {
+    background: var(--bg-soft);
+}
+
+.section-intro {
+    max-width: 720px;
+    margin-bottom: 64px;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--accent-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+}
+
+h1 {
+    font-size: clamp(2.7rem, 6vw, 5.4rem);
+}
+
+h2 {
+    font-size: clamp(2.3rem, 4.5vw, 4rem);
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+p {
+    color: var(--muted);
+}
+
+.lead {
+    max-width: 700px;
+    margin-top: 28px;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.75;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.site-header {
+    position: relative;
+    z-index: 20;
+    border-bottom: 1px solid var(--line);
+    background: rgba(245, 241, 233, 0.94);
+}
+
+.header-inner {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--muted);
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--text);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn--primary {
+    background: var(--text);
+    color: var(--surface-strong);
+}
+
+.btn--primary:hover {
+    background: var(--accent-dark);
+}
+
+.btn--secondary {
+    border-color: var(--line);
+    background: transparent;
+    color: var(--text);
+}
+
+.btn--secondary:hover {
+    background: var(--surface);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+    min-height: 76vh;
+    display: flex;
+    align-items: center;
+    padding: 110px 0 130px;
+}
+
+.hero-content {
+    max-width: 980px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 38px;
+}
+
+.hero-note {
+    max-width: 560px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.intro-grid__side {
+    padding-top: 8px;
+}
+
+.intro-grid__side p {
+    max-width: 430px;
+}
+
+/* ============================================================
+   SYSTEM MAP
+   ============================================================ */
+
+.system-map {
+    position: relative;
+    min-height: 520px;
+    margin-top: 70px;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    background: var(--bg-soft);
+    overflow: hidden;
+}
+
+.system-map__center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--surface-strong);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.system-map__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 1px;
+    background: var(--line);
+    transform-origin: left center;
+}
+
+.system-map__line--1 {
+    transform: rotate(0deg);
+}
+
+.system-map__line--2 {
+    transform: rotate(60deg);
+}
+
+.system-map__line--3 {
+    transform: rotate(120deg);
+}
+
+.system-map__line--4 {
+    transform: rotate(180deg);
+}
+
+.system-map__line--5 {
+    transform: rotate(240deg);
+}
+
+.system-map__line--6 {
+    transform: rotate(300deg);
+}
+
+.system-map__item {
+    position: absolute;
+    z-index: 4;
+    width: 170px;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface-strong);
+    text-align: center;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.system-map__item--1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.system-map__item--2 {
+    top: 25%;
+    right: 8%;
+}
+
+.system-map__item--3 {
+    bottom: 15%;
+    right: 10%;
+}
+
+.system-map__item--4 {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.system-map__item--5 {
+    bottom: 15%;
+    left: 10%;
+}
+
+.system-map__item--6 {
+    top: 25%;
+    left: 8%;
+}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+
+.project-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+}
+
+.project-tab {
+    position: relative;
+    padding: 0 4px 18px;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-tab::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: transparent;
+}
+
+.project-tab.active {
+    color: var(--text);
+}
+
+.project-tab.active::after {
+    background: var(--accent);
+}
+
+.project-panel {
+    display: none;
+}
+
+.project-panel.active {
+    display: block;
+    animation: projectFade 0.35s ease;
+}
+
+@keyframes projectFade {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-header {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 80px;
+    margin-bottom: 75px;
+}
+
+.project-header__number {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.project-header__text {
+    max-width: 690px;
+}
+
+.project-header__text p {
+    margin-top: 25px;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   PROCESS FLOW
+   ============================================================ */
+
+.flow-title {
+    margin-bottom: 30px;
+}
+
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.flow__item {
+    padding: 13px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.flow__arrow {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+/* ============================================================
+   PROJECT CONTENT
+   ============================================================ */
+
+.project-content {
+    margin-top: 80px;
+}
+
+.project-content__heading {
+    margin-bottom: 32px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px 60px;
+}
+
+.project-list__item {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+}
+
+.project-list__item strong {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.project-list__item p {
+    font-size: 0.94rem;
+}
+
+/* ============================================================
+   MEDIA
+   ============================================================ */
+
+.media-section {
+    margin-top: 90px;
+}
+
+.media-preview {
+    position: relative;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 22px;
+    background: var(--bg-soft);
+}
+
+.media-preview img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--bg-soft);
+    /* Amíg a valódi képek be nem kerülnek az assets mappába,
+       a keret a hero jelzését ismétli. Betöltött képnél ez a
+       réteg nem jelenik meg. */
+    color: transparent;
+    font-size: 0;
+}
+
+.media-preview img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-soft);
+}
+
+.media-preview img::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 132px;
+    height: 132px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent) 0 21px, transparent 22px);
+}
+
+.media-preview__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(32, 35, 31, 0.18);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.media-preview:hover .media-preview__overlay {
+    opacity: 1;
+}
+
+.media-preview__button {
+    min-width: 160px;
+    min-height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.media-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.media-actions button {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 11px 18px;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.88rem;
+}
+
+.media-actions button:hover {
+    background: var(--surface);
+}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid var(--line);
+    background: var(--line);
+}
+
+.process-card {
+    min-height: 240px;
+    padding: 36px;
+    background: var(--bg);
+}
+
+.process-card__number {
+    display: block;
+    margin-bottom: 45px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.process-card p {
+    margin-top: 14px;
+    font-size: 0.94rem;
+}
+
+/* ============================================================
+   RESULT
+   ============================================================ */
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+}
+
+.result-list {
+    border-top: 1px solid var(--line);
+}
+
+.result-item {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.result-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.result-item p {
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   FIT
+   ============================================================ */
+
+.fit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 65px;
+}
+
+.fit-item {
+    padding: 34px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.fit-item h3 {
+    margin-bottom: 13px;
+}
+
+.fit-item p {
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   STATEMENT
+   ============================================================ */
+
+.statement {
+    padding: 170px 0;
+    text-align: center;
+}
+
+.statement__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.statement h2 {
+    font-size: clamp(2.6rem, 5vw, 5rem);
+}
+
+.statement p {
+    max-width: 650px;
+    margin: 30px auto 0;
+    font-size: 1.08rem;
+}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.contact-copy p {
+    max-width: 460px;
+    margin-top: 25px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 18px;
+}
+
+.form-field {
+    display: grid;
+    gap: 8px;
+}
+
+.form-field label {
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    outline: none;
+    background: var(--surface);
+    color: var(--text);
+    padding: 15px 16px;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--accent);
+    background: var(--surface-strong);
+}
+
+.form-field textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.form-submit {
+    margin-top: 8px;
+}
+
+/* ============================================================
+   NDSYS TRANSITION
+   ============================================================ */
+
+.ndsys-transition {
+    padding: 130px 0;
+    background: var(--text);
+    color: var(--surface-strong);
+}
+
+.ndsys-transition p {
+    max-width: 650px;
+    margin-top: 24px;
+    color: rgba(250, 248, 243, 0.7);
+}
+
+.ndsys-transition .eyebrow {
+    color: #b5c0ad;
+}
+
+.ndsys-transition .btn {
+    margin-top: 34px;
+}
+
+.ndsys-transition .btn--primary {
+    background: var(--surface-strong);
+    color: var(--text);
+}
+
+.ndsys-transition .btn--primary:hover {
+    background: var(--bg);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.site-footer {
+    padding: 38px 0;
+    border-top: 1px solid rgba(250, 248, 243, 0.12);
+    background: var(--text);
+    color: rgba(250, 248, 243, 0.7);
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-inner p {
+    color: inherit;
+    font-size: 0.82rem;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(20, 22, 19, 0.94);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox__content {
+    position: relative;
+    width: min(100%, 1100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox__image {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.lightbox__close {
+    top: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+}
+
+.lightbox__prev,
+.lightbox__next {
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.lightbox__prev {
+    left: 25px;
+}
+
+.lightbox__next {
+    right: 25px;
+}
+
+.lightbox__counter {
+    position: fixed;
+    right: 50%;
+    bottom: 25px;
+    transform: translateX(50%);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   VIDEO LIGHTBOX
+   ============================================================ */
+
+.video-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 110;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(20, 22, 19, 0.94);
+}
+
+.video-lightbox.active {
+    display: flex;
+}
+
+.video-lightbox__content {
+    position: relative;
+    width: min(100%, 1100px);
+}
+
+.video-lightbox video {
+    display: block;
+    width: 100%;
+    max-height: 82vh;
+    border-radius: 10px;
+    background: #000;
+}
+
+.video-lightbox__close {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.4rem;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+    :root {
+        --section-space: 110px;
+    }
+
+    .container {
+        width: min(calc(100% - 36px), var(--max-width));
+    }
+
+    .main-nav {
+        gap: 18px;
+    }
+
+    .intro-grid,
+    .project-header,
+    .result-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .system-map {
+        min-height: 480px;
+    }
+
+    .system-map__item {
+        width: 145px;
+    }
+
+    .system-map__item--2 {
+        right: 3%;
+    }
+
+    .system-map__item--3 {
+        right: 4%;
+    }
+
+    .system-map__item--5 {
+        left: 4%;
+    }
+
+    .system-map__item--6 {
+        left: 3%;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+    :root {
+        --section-space: 90px;
+    }
+
+    .container {
+        width: min(calc(100% - 28px), var(--max-width));
+    }
+
+    .header-inner {
+        min-height: 72px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 90px 0 100px;
+    }
+
+    h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+    }
+
+    h2 {
+        font-size: clamp(2.15rem, 11vw, 3.1rem);
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .system-map {
+        min-height: 650px;
+        margin-top: 45px;
+    }
+
+    .system-map__center {
+        width: 140px;
+        height: 140px;
+        font-size: 1rem;
+    }
+
+    .system-map__line {
+        display: none;
+    }
+
+    .system-map__item {
+        width: 145px;
+        min-height: 62px;
+        font-size: 0.82rem;
+    }
+
+    .system-map__item--1 {
+        top: 7%;
+    }
+
+    .system-map__item--2 {
+        top: 23%;
+        right: 4%;
+    }
+
+    .system-map__item--3 {
+        bottom: 22%;
+        right: 4%;
+    }
+
+    .system-map__item--4 {
+        bottom: 7%;
+    }
+
+    .system-map__item--5 {
+        bottom: 22%;
+        left: 4%;
+    }
+
+    .system-map__item--6 {
+        top: 23%;
+        left: 4%;
+    }
+
+    .project-tabs {
+        gap: 22px;
+    }
+
+    .project-header {
+        margin-bottom: 55px;
+    }
+
+    .flow {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .flow__arrow {
+        display: none;
+    }
+
+    .flow__item {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .media-section {
+        margin-top: 65px;
+    }
+
+    .media-preview {
+        border-radius: 14px;
+    }
+
+    .media-preview__overlay {
+        opacity: 1;
+        align-items: flex-end;
+        padding: 20px;
+        background: linear-gradient(
+            to top,
+            rgba(32, 35, 31, 0.4),
+            transparent
+        );
+    }
+
+    .media-preview__button {
+        min-width: 140px;
+        min-height: 44px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-card {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .fit-grid {
+        grid-template-columns: 1fr;
+        margin-top: 45px;
+    }
+
+    .fit-item {
+        padding: 28px;
+    }
+
+    .statement {
+        padding: 110px 0;
+    }
+
+    .contact-grid {
+        gap: 55px;
+    }
+
+    .ndsys-transition {
+        padding: 100px 0;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .lightbox {
+        padding: 15px;
+    }
+
+    .lightbox__prev,
+    .lightbox__next {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox__prev {
+        left: 12px;
+    }
+
+    .lightbox__next {
+        right: 12px;
+    }
+
+    .lightbox__close,
+    .video-lightbox__close {
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* ============================================================
+   HTML × CSS ILLESZTŐ RÉTEG
+   A jelenlegi Index.html osztályneveihez igazítja a fenti
+   komponens-stílusokat. Új dizájn-érték nincs benne: csak a
+   fájlban már meglévő tokenek és értékek.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   OLDALSZÉLESSÉG
+   A .container (1180px, középre) szerepét veszi át, mivel a
+   HTML-ben nincs wrapper elem.
+   ------------------------------------------------------------ */
+
+.section,
+.site-header,
+.site-footer {
+    padding-inline: max(
+        clamp(20px, 4vw, 48px),
+        calc((100% - var(--max-width)) / 2)
+    );
+}
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 82px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--text);
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: -0.06em;
+}
+
+.header-link {
+    color: var(--muted);
+    font-size: 0.92rem;
+    transition: color 0.2s ease;
+}
+
+.header-link:hover {
+    color: var(--text);
+}
+
+/* ------------------------------------------------------------
+   SZAKASZCÍMEK
+   ------------------------------------------------------------ */
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--accent-dark);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-label::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 31px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.65;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 64px;
+}
+
+.section-heading.centered {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.section-heading p {
+    margin-top: 24px;
+}
+
+h1 em,
+h2 em {
+    display: block;
+    color: var(--muted);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.statement h2 em {
+    display: inline;
+}
+
+.emphasis {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ------------------------------------------------------------
+   HERO
+   ------------------------------------------------------------ */
+
+.hero {
+    position: relative;
+}
+
+.hero-inner {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-text {
+    max-width: 620px;
+    margin-top: 28px;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.75;
+}
+
+.hero-content .primary-button {
+    margin-top: 38px;
+}
+
+/* --- HERO SIGNATURE --------------------------------------- */
+
+.hero-signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    justify-self: end;
+}
+
+.signature-ring {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+}
+
+.signature-ring::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 158px;
+    height: 158px;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.signature-core {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--surface-strong);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+}
+
+.signature-spokes {
+    position: absolute;
+    inset: 0;
+}
+
+.signature-spokes span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 1px;
+    background: var(--line);
+    transform-origin: left center;
+}
+
+.signature-spokes span::after {
+    content: "";
+    position: absolute;
+    top: -2.5px;
+    right: -2.5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.signature-spokes span:nth-child(1) {
+    transform: rotate(-90deg);
+}
+
+.signature-spokes span:nth-child(2) {
+    transform: rotate(-30deg);
+}
+
+.signature-spokes span:nth-child(3) {
+    transform: rotate(30deg);
+}
+
+.signature-spokes span:nth-child(4) {
+    transform: rotate(90deg);
+}
+
+.signature-spokes span:nth-child(5) {
+    transform: rotate(150deg);
+}
+
+.signature-spokes span:nth-child(6) {
+    transform: rotate(210deg);
+}
+
+.signature-caption {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------
+   GOMBOK
+   ------------------------------------------------------------ */
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--text);
+    color: var(--surface-strong);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.primary-button:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 0 24px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.text-link:hover {
+    background: var(--surface);
+    transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------
+   RENDSZER-TÉRKÉP
+   (.system-center / .system-node / .system-links)
+   ------------------------------------------------------------ */
+
+.system-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: 190px;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--surface-strong);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.system-node {
+    position: absolute;
+    z-index: 4;
+    width: 170px;
+    min-height: 78px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--bg);
+    text-align: center;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.node-index {
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.node-top {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-right-top {
+    top: 25%;
+    right: 8%;
+}
+
+.node-right-bottom {
+    bottom: 15%;
+    right: 10%;
+}
+
+.node-bottom {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-left-bottom {
+    bottom: 15%;
+    left: 10%;
+}
+
+.node-left-top {
+    top: 25%;
+    left: 8%;
+}
+
+/* A HTML SVG-vel rajzolja meg a központ és a csomópontok közötti
+   hajszálvonalakat, ezért minden képernyőméreten oda futnak,
+   ahová kell. A régi, fix szögű span-vonalak helyére lép. */
+
+.system-rings {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.system-rings span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.system-rings span:nth-child(1) {
+    width: 320px;
+    height: 320px;
+}
+
+.system-rings span:nth-child(2) {
+    width: 620px;
+    height: 620px;
+    opacity: 0.4;
+}
+
+.system-links {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.system-links line {
+    stroke: var(--line);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+}
+
+/* ------------------------------------------------------------
+   PROJEKTEK
+   ------------------------------------------------------------ */
+
+.tab-number {
+    margin-right: 10px;
+    color: var(--accent);
+}
+
+.project-intro {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 80px;
+    margin-bottom: 75px;
+}
+
+.project-number {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.project-intro p {
+    margin-top: 25px;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.project-system {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.project-system span {
+    padding: 13px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-system i {
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px 60px;
+    margin-top: 80px;
+}
+
+.detail-block {
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+}
+
+.detail-block h4 {
+    margin-bottom: 7px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.detail-block p {
+    font-size: 0.94rem;
+}
+
+.detail-block ul {
+    padding-left: 20px;
+    list-style: disc;
+    color: var(--muted);
+}
+
+.detail-block li {
+    font-size: 0.94rem;
+}
+
+/* ------------------------------------------------------------
+   MÉDIA
+   ------------------------------------------------------------ */
+
+.project-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 90px;
+}
+
+.media-preview {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+}
+
+.media-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(32, 35, 31, 0.18);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.media-preview:hover .media-overlay {
+    opacity: 1;
+}
+
+.media-overlay > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    min-height: 48px;
+    padding: 0 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.media-overlay small {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
+
+.video-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 11px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.88rem;
+    text-align: left;
+}
+
+.video-preview:hover {
+    background: var(--surface);
+}
+
+.video-preview small {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.play-icon {
+    color: var(--accent);
+}
+
+/* ------------------------------------------------------------
+   FOLYAMAT / EREDMÉNY / KINEK VALÓ
+   ------------------------------------------------------------ */
+
+.process-step {
+    min-height: 240px;
+    padding: 36px;
+    background: var(--bg);
+}
+
+.process-step > span {
+    display: block;
+    margin-bottom: 45px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.process-step p {
+    margin-top: 14px;
+    font-size: 0.94rem;
+}
+
+.result-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+}
+
+.result-list > div {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.result-list strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.result-list p {
+    font-size: 0.95rem;
+}
+
+.fit-item > span {
+    display: block;
+    margin-bottom: 13px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+}
+
+.fit-item.current {
+    border-color: var(--accent);
+}
+
+.statement-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   KAPCSOLAT
+   ------------------------------------------------------------ */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.contact-form label {
+    display: grid;
+    gap: 8px;
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    outline: none;
+    background: var(--surface);
+    color: var(--text);
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent);
+    background: var(--surface-strong);
+}
+
+.contact-form textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.contact-form .primary-button {
+    margin-top: 8px;
+    justify-self: start;
+}
+
+.hidden-field {
+    display: none;
+}
+
+.form-note {
+    font-size: 0.82rem;
+}
+
+/* ------------------------------------------------------------
+   NDSYS ÁTMENET
+   ------------------------------------------------------------ */
+
+.next-level {
+    padding-block: 130px;
+    background: var(--text);
+    color: var(--surface-strong);
+}
+
+.next-level .section-label {
+    color: #b5c0ad;
+}
+
+.next-level h2 em {
+    color: rgba(250, 248, 243, 0.7);
+}
+
+.next-level .text-link {
+    margin-top: 34px;
+    border-color: rgba(250, 248, 243, 0.35);
+    color: var(--surface-strong);
+}
+
+.next-level .text-link:hover {
+    background: rgba(250, 248, 243, 0.08);
+}
+
+/* ------------------------------------------------------------
+   LIGHTBOXOK
+   ------------------------------------------------------------ */
+
+.lightbox.active,
+.lightbox.open,
+.video-lightbox.active,
+.video-lightbox.open {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    width: min(100%, 1100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* A HTML .video-container wrappert használ a .video-lightbox__content helyett */
+.video-container {
+    position: relative;
+    width: min(100%, 1100px);
+}
+
+.video-lightbox video {
+    display: block;
+    width: 100%;
+    max-height: 82vh;
+    border-radius: 10px;
+    background: #000;
+}
+
+.lightbox-close,
+.lightbox-arrow,
+.video-lightbox-close {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-arrow:hover,
+.video-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.lightbox-close,
+.video-lightbox-close {
+    top: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+}
+
+.lightbox-arrow {
+    top: 50%;
+    width: 52px;
+    height: 52px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+.lightbox-counter {
+    position: fixed;
+    right: 50%;
+    bottom: 25px;
+    transform: translateX(50%);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+}
+
+.video-container {
+    position: relative;
+    width: min(100%, 1100px);
+}
+
+/* ------------------------------------------------------------
+   ÉLŐ RENDSZER LINK
+   ------------------------------------------------------------ */
+
+.project-live {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 26px 40px;
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+}
+
+.live-copy {
+    max-width: 520px;
+}
+
+.live-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+    color: var(--accent-dark);
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.live-kicker i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.live-copy p {
+    font-size: 0.94rem;
+}
+
+.live-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 50px;
+    padding: 0 22px;
+    border: 1px solid rgba(101, 115, 93, 0.35);
+    border-radius: 999px;
+    background: rgba(101, 115, 93, 0.07);
+    color: var(--accent-dark);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.live-link:hover {
+    border-color: var(--accent);
+    background: rgba(101, 115, 93, 0.14);
+    transform: translateY(-1px);
+}
+
+.live-arrow {
+    font-size: 1.05rem;
+    transition: transform 0.25s ease;
+}
+
+.live-link:hover .live-arrow {
+    transform: translate(2px, -2px);
+}
+
+/* ------------------------------------------------------------
+   KINEK VALÓ / EGYEDI MEGJEGYZÉSEK
+   ------------------------------------------------------------ */
+
+.fit-note {
+    max-width: 760px;
+    margin: 48px auto 0;
+    text-align: center;
+    font-size: 0.94rem;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px 60px;
+}
+
+.audience-item {
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+}
+
+.audience-item h3 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.audience-item p {
+    max-width: 440px;
+    font-size: 0.95rem;
+}
+
+.contact-note {
+    max-width: 420px;
+    margin-top: 24px;
+}
+
+.next-level-note {
+    max-width: 620px;
+    margin-top: 22px;
+    color: rgba(250, 248, 243, 0.72);
+}
+
+/* ------------------------------------------------------------
+   LÁBLÉC
+   ------------------------------------------------------------ */
+
+.site-footer {
+    padding-block: 58px 46px;
+    border-top: 1px solid var(--line);
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px 40px;
+}
+
+.footer-note {
+    font-size: 0.82rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 28px;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.footer-links a {
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--text);
+}
+
+/* ============================================================
+   ILLESZTŐ RÉTEG — RESPONSIVE
+   A fájl korábbi töréspontjainak megfelelő értékei, az új
+   szelektorokra alkalmazva.
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .hero-signature {
+        justify-self: center;
+    }
+
+    .project-intro,
+    .result-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-details {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .system-node {
+        width: 145px;
+    }
+
+    .node-right-top {
+        right: 3%;
+    }
+
+    .node-right-bottom {
+        right: 4%;
+    }
+
+    .node-left-bottom {
+        left: 4%;
+    }
+
+    .node-left-top {
+        left: 3%;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        min-height: 72px;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .system-center {
+        width: 140px;
+        height: 140px;
+        font-size: 1rem;
+    }
+
+    .system-rings span:nth-child(1) {
+        width: 260px;
+        height: 260px;
+    }
+
+    .system-rings span:nth-child(2) {
+        display: none;
+    }
+
+    .system-node {
+        width: 145px;
+        min-height: 70px;
+        font-size: 0.82rem;
+    }
+
+    .node-index {
+        font-size: 0.6rem;
+    }
+
+    .signature-ring {
+        width: 176px;
+        height: 176px;
+    }
+
+    .signature-ring::after {
+        width: 116px;
+        height: 116px;
+    }
+
+    .signature-core {
+        width: 46px;
+        height: 46px;
+    }
+
+    .project-live {
+        align-items: flex-start;
+    }
+
+    .live-link {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .node-top {
+        top: 7%;
+    }
+
+    .node-right-top {
+        top: 23%;
+        right: 4%;
+    }
+
+    .node-right-bottom {
+        bottom: 22%;
+        right: 4%;
+    }
+
+    .node-bottom {
+        bottom: 7%;
+    }
+
+    .node-left-bottom {
+        bottom: 22%;
+        left: 4%;
+    }
+
+    .node-left-top {
+        top: 23%;
+        left: 4%;
+    }
+
+    .project-intro {
+        margin-bottom: 55px;
+    }
+
+    .project-media {
+        margin-top: 65px;
+    }
+
+    .media-overlay {
+        opacity: 1;
+        align-items: flex-end;
+        padding: 20px;
+        background: linear-gradient(
+            to top,
+            rgba(32, 35, 31, 0.4),
+            transparent
+        );
+    }
+
+    .process-step {
+        min-height: auto;
+        padding: 30px;
+    }
+
+    .contact-layout {
+        gap: 55px;
+    }
+
+    .next-level {
+        padding-block: 100px;
+    }
+
+    .lightbox-arrow {
+        width: 44px;
+        height: 44px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+
+    .lightbox-close,
+    .video-lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+    }
+}
