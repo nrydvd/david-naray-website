@@ -26,7 +26,7 @@ function removeArrowCharacters(value){if(Array.isArray(value))return value.map(r
 Object.assign(content,removeArrowCharacters(content));
 content.hu.projects[1][0] = 'Lúme';
 content.en.projects[1][0] = 'Lúme';
-content.hu.projects = [['ÜZLETI WEBOLDAL','','pages/Business-Website/index.html'],['LANDING PAGE','','pages/landing-pages/index.html'],['EGYEDI RENDSZEREK','','https://davidnaray.com/pages/egyedi-rendszerek'],['KOMPLETT RENDSZEREK','','https://davidnaray.com/pages/Komplett-rendszerek'],['NDSYS','','https://davidnaray.com/pages/ndsys']];
+content.hu.projects = [['ÜZLETI WEBOLDAL','','Business-Website/index.html'],['LANDING PAGE','','landing-pages/index.html'],['EGYEDI RENDSZEREK','','egyedi-rendszerek/index.html'],['KOMPLETT RENDSZEREK','','Komplett-rendszerek/index.html'],['NDSYS','','ndsys/index.html']];
 content.en.projects = content.hu.projects;
 let currentLanguage='hu';
 const $=selector=>document.querySelector(selector);
