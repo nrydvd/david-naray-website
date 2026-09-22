@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NDsYs | David Naray</title>
+    <meta
+      name="description"
+      content="NDsYs is a custom business system by David Naray: one connected way to run the work, automate the repeatable parts, and keep human decisions clear."
+    >
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f5f2ea'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='Arial,sans-serif' font-size='18' font-weight='800' fill='%23070806'%3EDN%3C/text%3E%3C/svg%3E"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas class="system-canvas" id="systemCanvas" aria-hidden="true"></canvas>
+
+    <header class="site-header" data-glass>
+      <a class="brand" href="../index.html" aria-label="David Naray home">
+        <span class="brand-mark">DN</span>
+        <span class="brand-name">David Naray</span>
+      </a>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="landing-pages/index.html" data-i18n="nav.landing">Landing</a>
+        <a href="Business-Website/index.html" data-i18n="nav.web">Web</a>
+        <a href="egyedi-rendszerek/index.html" data-i18n="nav.custom">Custom</a>
+        <a href="Komplett-rendszerek/index.html" data-i18n="nav.business">Business</a>
+      </nav>
+
+      <div class="language-switch" aria-label="Language">
+        <button type="button" class="is-active" data-lang="en">EN</button>
+        <button type="button" data-lang="hu">HU</button>
+        <button type="button" data-lang="de">DE</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="top">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">NDsYs by David Naray</p>
+            <h1>NDsYs</h1>
+            <p class="hero-line" data-i18n="hero.tagline">One system. It knows what to do.</p>
+            <div class="hero-questions" aria-label="Opening questions">
+              <p data-i18n="hero.q1">What happens after someone writes to you?</p>
+              <p data-i18n="hero.q2">Where does the next task go?</p>
+              <p data-i18n="hero.q3">Who decides, and what can move on its own?</p>
+            </div>
+          </div>
+
+          <div class="hero-orbit" aria-label="Interactive NDsYs system map">
+            <div class="core-node">
+              <span>NDsYs</span>
+            </div>
+            <a class="orbit-node orbit-landing" href="landing-pages/index.html" data-module="landing">
+              <span data-i18n="modules.landing.title">Landing</span>
+            </a>
+            <a class="orbit-node orbit-web" href="Business-Website/index.html" data-module="web">
+              <span data-i18n="modules.web.title">Web</span>
+            </a>
+            <a class="orbit-node orbit-system" href="egyedi-rendszerek/index.html" data-module="system">
+              <span data-i18n="modules.system.title">Custom</span>
+            </a>
+            <a class="orbit-node orbit-business" href="Komplett-rendszerek/index.html" data-module="business">
+              <span data-i18n="modules.business.title">Business</span>
+            </a>
+            <div class="orbit-line orbit-line-a"></div>
+            <div class="orbit-line orbit-line-b"></div>
+            <div class="orbit-line orbit-line-c"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="intro.eyebrow">The quiet answer</p>
+          <h2 data-i18n="intro.title">Your business already has a system. It may just be scattered.</h2>
+        </div>
+        <div class="split-text">
+          <p data-i18n="intro.body1">
+            NDsYs connects the pieces you already use and fills the gaps where work usually gets lost.
+          </p>
+          <p data-i18n="intro.body2">
+            It can start small: a form, a calendar, a client flow, a file structure. Then it grows around the way your team actually works.
+          </p>
+        </div>
+      </section>
+
+      <section class="section builder-section" id="builder">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="builder.eyebrow">System builder</p>
+          <h2 data-i18n="builder.title">Start with one thing. Build from there.</h2>
+          <p data-i18n="builder.copy">
+            Choose the parts that belong together. NDsYs does not force a new way of working. It gives the existing work a structure.
+          </p>
+        </div>
+
+        <div class="builder-layout">
+          <div class="module-list" aria-label="System parts">
+            <button type="button" class="module-card is-selected" data-builder="landing">
+              <span data-i18n="modules.landing.title">Landing</span>
+              <small data-i18n="modules.landing.short">First message, first action.</small>
+            </button>
+            <button type="button" class="module-card" data-builder="web">
+              <span data-i18n="modules.web.title">Web</span>
+              <small data-i18n="modules.web.short">The public face of the system.</small>
+            </button>
+            <button type="button" class="module-card" data-builder="system">
+              <span data-i18n="modules.system.title">Custom</span>
+              <small data-i18n="modules.system.short">Internal tools built around your process.</small>
+            </button>
+            <button type="button" class="module-card" data-builder="business">
+              <span data-i18n="modules.business.title">Business</span>
+              <small data-i18n="modules.business.short">The whole operation in one rhythm.</small>
+            </button>
+          </div>
+
+          <div class="builder-stage" aria-live="polite">
+            <div class="stage-grid" id="stageGrid">
+              <div class="stage-cell is-active" data-stage="landing">
+                <span data-i18n="modules.landing.title">Landing</span>
+              </div>
+              <div class="stage-cell" data-stage="web">
+                <span data-i18n="modules.web.title">Web</span>
+              </div>
+              <div class="stage-cell" data-stage="system">
+                <span data-i18n="modules.system.title">Custom</span>
+              </div>
+              <div class="stage-cell" data-stage="business">
+                <span data-i18n="modules.business.title">Business</span>
+              </div>
+              <div class="stage-center">NDsYs</div>
+            </div>
+            <div class="stage-copy">
+              <h3 id="builderTitle" data-i18n="builder.panel.landing.title">A clear first step</h3>
+              <p id="builderText" data-i18n="builder.panel.landing.text">
+                A landing page can become more than a page. It can collect the right information, start the right flow, and help the visitor move without noise.
+              </p>
+              <a id="builderLink" class="text-link" href="/landing" data-i18n="builder.panel.open">Open this part</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compare-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="compare.eyebrow">Before and after</p>
+          <h2 data-i18n="compare.title">Nothing has to shout. It just has to connect.</h2>
+        </div>
+
+        <div class="compare-visual" data-mode="after">
+          <div class="compare-controls" role="tablist" aria-label="Compare">
+            <button type="button" role="tab" aria-selected="false" data-compare="before" data-i18n="compare.before">Before</button>
+            <button type="button" role="tab" aria-selected="true" data-compare="after" data-i18n="compare.after">After</button>
+          </div>
+          <div class="work-map" aria-hidden="true">
+            <span class="work-node node-a">Website</span>
+            <span class="work-node node-b">Email</span>
+            <span class="work-node node-c">Calendar</span>
+            <span class="work-node node-d">Files</span>
+            <span class="work-node node-e">Tasks</span>
+            <span class="work-node node-f">Team</span>
+            <span class="work-core">NDsYs</span>
+          </div>
+          <p data-i18n="compare.copy">
+            The tools can stay familiar. The difference is what happens between them.
+          </p>
+        </div>
+      </section>
+
+      <section class="section human-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="human.eyebrow">What makes it work</p>
+          <h2 data-i18n="human.title">Built by people. Connected by one system.</h2>
+        </div>
+
+        <div class="team-strip">
+          <button type="button" class="team-role" data-drawer="strategy">
+            <span data-i18n="team.strategy.title">Strategy</span>
+            <small data-i18n="team.strategy.short">What should happen first?</small>
+          </button>
+          <button type="button" class="team-role" data-drawer="design">
+            <span data-i18n="team.design.title">Design</span>
+            <small data-i18n="team.design.short">How should it feel?</small>
+          </button>
+          <button type="button" class="team-role" data-drawer="development">
+            <span data-i18n="team.development.title">Development</span>
+            <small data-i18n="team.development.short">What should it do?</small>
+          </button>
+          <button type="button" class="team-role" data-drawer="automation">
+            <span data-i18n="team.automation.title">Automation</span>
+            <small data-i18n="team.automation.short">What can move by itself?</small>
+          </button>
+          <button type="button" class="team-role" data-drawer="decisions">
+            <span data-i18n="team.decisions.title">Human decisions</span>
+            <small data-i18n="team.decisions.short">Where should a person step in?</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="section growth-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="growth.eyebrow">A playful kind of growth</p>
+          <h2 data-i18n="growth.title">The system gets stronger when the work gets clearer.</h2>
+        </div>
+
+        <div class="growth-game">
+          <div class="growth-meter" aria-hidden="true">
+            <span class="meter-fill" id="growthFill"></span>
+          </div>
+          <div class="growth-actions">
+            <button type="button" data-grow="lead" data-i18n="growth.lead">Add intake</button>
+            <button type="button" data-grow="task" data-i18n="growth.task">Add task flow</button>
+            <button type="button" data-grow="file" data-i18n="growth.file">Add file logic</button>
+            <button type="button" data-grow="team" data-i18n="growth.team">Add team handoff</button>
+          </div>
+          <p id="growthMessage" data-i18n="growth.message0">
+            Pick one useful piece. The point is not to make a huge system overnight.
+          </p>
+        </div>
+      </section>
+
+      <section class="section depth-section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="depth.eyebrow">Under the surface</p>
+          <h2 data-i18n="depth.title">Simple outside. Serious underneath.</h2>
+          <p data-i18n="depth.copy">
+            The details can stay hidden until they matter. Open the layers if you want to see how the system is usually built.
+          </p>
+        </div>
+
+        <div class="accordion" id="depthAccordion">
+          <article class="accordion-item">
+            <button type="button" aria-expanded="false">
+              <span data-i18n="depth.items.intake.title">Intake and routing</span>
+              <strong>+</strong>
+            </button>
+            <div class="accordion-panel">
+              <p data-i18n="depth.items.intake.text">
+                Forms, messages, bookings and requests arrive with enough context to start the next step cleanly.
+              </p>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button type="button" aria-expanded="false">
+              <span data-i18n="depth.items.data.title">Data and structure</span>
+              <strong>+</strong>
+            </button>
+            <div class="accordion-panel">
+              <p data-i18n="depth.items.data.text">
+                Names, statuses, files and decisions follow a shared logic, so the team does not have to guess where things belong.
+              </p>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button type="button" aria-expanded="false">
+              <span data-i18n="depth.items.automation.title">Automation rules</span>
+              <strong>+</strong>
+            </button>
+            <div class="accordion-panel">
+              <p data-i18n="depth.items.automation.text">
+                Repeated steps can run quietly, while sensitive moments stay visible for the people who should decide.
+              </p>
+            </div>
+          </article>
+          <article class="accordion-item">
+            <button type="button" aria-expanded="false">
+              <span data-i18n="depth.items.dashboard.title">Dashboards and control</span>
+              <strong>+</strong>
+            </button>
+            <div class="accordion-panel">
+              <p data-i18n="depth.items.dashboard.text">
+                The important state of the business becomes easier to read: what is waiting, what moved, what needs attention.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section answers-section">
+        <div class="answer-list">
+          <div>
+            <p data-i18n="answers.q1">What happens after someone writes to you?</p>
+            <h3 data-i18n="answers.a1">The right path starts.</h3>
+          </div>
+          <div>
+            <p data-i18n="answers.q2">Where does the next task go?</p>
+            <h3 data-i18n="answers.a2">To the right place, with context.</h3>
+          </div>
+          <div>
+            <p data-i18n="answers.q3">Who decides?</p>
+            <h3 data-i18n="answers.a3">People decide what matters. The system carries the rest.</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing-section">
+        <p class="eyebrow" data-i18n="closing.eyebrow">Start clean</p>
+        <h2 data-i18n="closing.title">You don't need to know what to build. Tell us how you work.</h2>
+        <a class="cta-button" href="https://davidnaray.com/#contact" data-i18n="closing.cta">Let's build the system.</a>
+      </section>
+    </main>
+
+    <aside class="drawer" id="infoDrawer" aria-hidden="true" aria-labelledby="drawerTitle">
+      <div class="drawer-backdrop" data-close-drawer></div>
+      <div class="drawer-panel" role="dialog" aria-modal="true">
+        <button type="button" class="drawer-close" data-close-drawer aria-label="Close">×</button>
+        <p class="eyebrow" id="drawerEyebrow">NDsYs</p>
+        <h2 id="drawerTitle">Title</h2>
+        <p id="drawerText">Text</p>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
