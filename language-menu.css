@@ -6,6 +6,18 @@
   color: inherit;
 }
 
+.nav-panel {
+  gap: 28px;
+}
+
+.systems-header-inner {
+  gap: 24px;
+}
+
+.top-nav {
+  gap: 10px;
+}
+
 .site-language-menu > summary {
   display: flex;
   width: 40px;
@@ -75,4 +87,10 @@
 .site-language-button[aria-current="page"] {
   border-bottom-color: currentColor;
   font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .nav-panel {
+    gap: 25px;
+  }
 }
