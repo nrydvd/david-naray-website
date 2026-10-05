@@ -26,7 +26,7 @@
           <a href="../#contact">Kapcsolat</a>
         </div>
         <div class="language-switcher" aria-label="Nyelvváltó">
-          <button class="lang-button is-active" type="button">HU</button><span>/</span><button class="lang-button" type="button">EN</button>
+          <button class="lang-button is-active" type="button" data-lang="hu" aria-pressed="true">HU</button><span>/</span><button class="lang-button" type="button" data-lang="en" aria-pressed="false">EN</button><span>/</span><button class="lang-button" type="button" data-lang="de" aria-pressed="false">DE</button>
         </div>
       </div>
     </nav>
@@ -101,5 +101,166 @@
   <footer class="footer"><div class="shell footer-top"><a class="brand" href="../"><span class="brand-mark">DN</span><span>Dávid Náray</span></a><p>Digitális megoldások kisvállalkozásoknak.</p><div class="footer-links"><a href="../">Főoldal</a><a href="../#solutions">Megoldások</a><a href="../#work">Munkáim</a><a href="../#about">Rólam</a><a href="../#contact">Kapcsolat</a><a href="../#imprint">Impresszum</a></div><div class="social-links"><a href="https://www.instagram.com/n_david_/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/nry.dvd/" target="_blank" rel="noopener">Facebook</a></div></div><div class="shell footer-bottom"><span>© 2026 Dávid Náray</span><span>Made with intention.</span></div></footer>
 
   <script src="../script.js"></script>
+  <script>
+    (() => {
+      const translations = {
+        en: [
+          '09 ', '—', ' PRIVACY', 'Privacy', 'Notice', 'Effective: 10 September 2026.',
+          'This notice explains how Náray Dávid processes personal data provided on davidnaray.com, particularly through the contact form.',
+          '1. Controller and contact details', 'Controller:', ' Náray Dávid', 'Registered address:', ' 17 Szabadság Street, 9952 Gasztony, Hungary', 'Email:',
+          'naray.david92@gmail.com', 'Phone:', '+36 30 725 8407', '2. Purposes of processing', 'Personal data is processed for the following purposes:',
+          'handling contact requests and enquiries;', 'communicating with enquirers;', 'preparing offers and taking steps towards entering into a contract;',
+          'performing contracts that have been entered into;', 'bringing, pursuing or defending legal claims.', '3. Categories of personal data processed',
+          'name;', 'business name;', 'email address;', 'the selected service category;', 'message content;',
+          'technical data relating to use of the form, where processed by the website or its service providers.',
+          'Please do not include sensitive personal data or any other information in your message that is not needed to contact us or does not need to be processed.',
+          'The form on the separate showcase page ', 'pages/landing-pages/', ' requests a name, email address, business/project name, selected service and message for the same contact purpose. The form opens the browser’s email application using a ', 'mailto:', ' link; the project code does not make a Web3Forms API call for this form.',
+          '4. Legal bases for processing', 'The legal basis depends on the purpose:',
+          'taking steps at the data subject’s request before entering into a contract, including necessary contact;', 'performing a contract that has been entered into;',
+          'complying with a legal obligation applicable to the controller;', 'consent, only for processing where consent is genuinely required.',
+          'Contact and the preparation of an offer are not automatically based on consent. Consent may be withdrawn at any time, but withdrawal does not affect the lawfulness of processing carried out before it was withdrawn.',
+          '5. Data retention periods',
+          'The controller processes contact-related data for as long as necessary to handle the enquiry, prepare an offer or take steps towards a contract. If no contract is entered into, the data is deleted once the matter is closed, unless it must be retained to handle a legal claim or comply with a legal obligation.',
+          'If a contract is entered into, processing follows the requirements for performing the contract and the related legal and accounting retention obligations. Data needed for legal claims may be retained for as long as those claims can be brought.',
+          'The retention periods applied by Web3Forms and other external service providers are not set by the controller. They are governed by each provider’s applicable terms and privacy documentation; the project does not establish those periods.',
+          '6. Processors and external service providers', 'Web3Forms',
+          'Used to technically process the main website’s contact form. The browser’s JavaScript sends a POST request to ', 'https://api.web3forms.com/submit',
+          '. The code sends the name, business name, email address, selected service category, message and pre-filled contact-form fields (such as the subject and recipient). The provider may process this information to deliver the message and operate its service. Current Web3Forms terms on data protection, retention and international transfers are set out in the provider’s documentation; this project does not establish any specific provider guarantee or retention period.',
+          'GitHub Pages', 'Provides hosting and publication for the website. While serving the site, the provider may process technical data related to web requests under its own terms.',
+          'Google Fonts',
+          'The website’s typefaces are currently loaded from Google Fonts. According to Google Fonts’ official information, the Fonts API does not set or log cookies. However, when fonts are loaded, the browser sends a technical HTTP request that may include, among other things, an IP address, the requested URL and browser-related headers. The project does not currently include local copies of the fonts; local hosting should only be considered after the required font files and their licensing and technical requirements have been checked.',
+          '7. Transfers outside the EEA',
+          'Some external service providers may process data outside the European Economic Area or allow access to data from there. Depending on the provider’s current operations and documentation, this may be relevant in particular to Web3Forms, GitHub Pages and Google Fonts. The specific transfer mechanism, safeguards and retention period can only be established from external documentation or legal review.',
+          'The conditions for such transfers and the safeguards used must be assessed against the relevant provider’s current privacy notice, contractual documentation and applicable law. A specific compliance mechanism or legal safeguard can only be stated on the basis of the provider’s current documentation.',
+          '8. Data subject rights',
+          'Data subjects may request access to their personal data, its rectification or erasure, or restriction of processing, and may object to processing where the relevant conditions are met. They may also withdraw consent where processing is based on consent.',
+          'The right to data portability may be exercised where the statutory conditions are met, particularly where processing is automated and based on consent or a contract. Requests may be submitted to the email address above.',
+          '9. Complaints and remedies', 'If your rights are infringed, you may first contact the controller. You may lodge a complaint with the ',
+          'Hungarian National Authority for Data Protection and Freedom of Information', ' (NAIH, 9–11 Falk Miksa Street, 1055 Budapest, Hungary; ', 'naih.hu', '), or bring a claim before a court.',
+          '10. Automated decision-making and profiling', 'The controller does not currently use automated decision-making or carry out profiling.',
+          '11. Cookies and similar technologies',
+          'The website code currently contains no Google Analytics, Meta Pixel, advertising tracking or other marketing tracking. The site uses browser local storage to remember your “Understood” choice on the notice banner; this is not a cookie and is not used for marketing tracking. The separate external HTTP connections made by Google Fonts are described in section 6 of this notice. The browser and hosting providers may process technical data required to serve the website as part of their own operations.',
+          '12. Data security',
+          'Using the technical and organisational measures available to the controller and those provided by its service providers, the controller seeks to protect data, restrict access and secure transmitted data. Data security also depends on the measures taken by the hosting, form and network service providers used.',
+          '13. Changes to this notice',
+          'The controller reserves the right to amend this notice, particularly if the website, services or applicable laws change. Last updated: ', '10 September 2026.'
+        ],
+        de: [
+          '09 ', '—', ' DATENSCHUTZ', 'Datenschutz-', 'hinweise', 'Gültig ab: 10. September 2026.',
+          'Diese Datenschutzhinweise erläutern, wie Náray Dávid personenbezogene Daten verarbeitet, die über die Website davidnaray.com, insbesondere über das Kontaktformular, mitgeteilt werden.',
+          '1. Verantwortlicher und Kontaktdaten', 'Verantwortlicher:', ' Náray Dávid', 'Anschrift:', ' Szabadság utca 17., 9952 Gasztony, Ungarn', 'E-Mail:',
+          'naray.david92@gmail.com', 'Telefon:', '+36 30 725 8407', '2. Zwecke der Verarbeitung', 'Personenbezogene Daten werden zu folgenden Zwecken verarbeitet:',
+          'Bearbeitung von Kontaktanfragen und Anfragen zu Leistungen;', 'Kommunikation mit Interessenten;', 'Erstellung von Angeboten und Vorbereitung eines Vertragsabschlusses;',
+          'Erfüllung geschlossener Verträge;', 'Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.', '3. Kategorien verarbeiteter personenbezogener Daten',
+          'Name;', 'Name des Unternehmens;', 'E-Mail-Adresse;', 'die ausgewählte Dienstleistungskategorie;', 'Inhalt der Nachricht;',
+          'technische Daten im Zusammenhang mit der Nutzung des Formulars, soweit diese von der Website oder den verbundenen Dienstleistern verarbeitet werden.',
+          'Bitte übermitteln Sie in Ihrer Nachricht keine besonderen Kategorien personenbezogener Daten und keine sonstigen Angaben, die für die Kontaktaufnahme nicht erforderlich sind oder nicht verarbeitet werden müssen.',
+          'Das Formular auf der separaten Präsentationsseite ', 'pages/landing-pages/', ' erhebt für denselben Kontaktzweck den Namen, die E-Mail-Adresse, den Unternehmens-/Projektnamen, die ausgewählte Dienstleistung und eine Nachricht. Das Formular öffnet mit einem ', 'mailto:', '-Link das E-Mail-Programm des Browsers; der Projektcode verwendet für dieses Formular keinen Web3Forms-API-Aufruf.',
+          '4. Rechtsgrundlagen der Verarbeitung', 'Die Rechtsgrundlage richtet sich nach dem jeweiligen Zweck:',
+          'Durchführung vorvertraglicher Maßnahmen auf Anfrage der betroffenen Person, einschließlich der erforderlichen Kontaktaufnahme;', 'Erfüllung eines geschlossenen Vertrags;',
+          'Erfüllung einer für den Verantwortlichen geltenden rechtlichen Verpflichtung;', 'Einwilligung, ausschließlich bei Verarbeitungsvorgängen, für die sie tatsächlich erforderlich ist.',
+          'Die Kontaktaufnahme und die Vorbereitung eines Angebots beruhen nicht automatisch auf einer Einwilligung. Eine Einwilligung kann jederzeit widerrufen werden; der Widerruf berührt jedoch nicht die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung.',
+          '5. Aufbewahrungsdauer',
+          'Der Verantwortliche verarbeitet kontaktbezogene Daten so lange, wie es für die Bearbeitung der Anfrage, die Angebotserstellung oder die Vorbereitung eines Vertragsabschlusses erforderlich ist. Kommt kein Vertrag zustande, werden die Daten nach Abschluss des Vorgangs gelöscht, sofern ihre weitere Aufbewahrung nicht zur Bearbeitung eines Rechtsanspruchs oder zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist.',
+          'Kommt ein Vertrag zustande, richtet sich die Verarbeitung nach dessen Erfüllung sowie den damit verbundenen gesetzlichen Aufbewahrungspflichten, insbesondere im Bereich der Buchführung. Für Rechtsansprüche erforderliche Daten können so lange aufbewahrt werden, wie solche Ansprüche geltend gemacht werden können.',
+          'Die Aufbewahrungsfristen von Web3Forms und anderen externen Dienstleistern werden nicht vom Verantwortlichen festgelegt. Sie richten sich nach den jeweils geltenden Bedingungen und Datenschutzhinweisen des Anbieters; aus dem Projekt lassen sich diese Fristen nicht feststellen.',
+          '6. Auftragsverarbeiter und externe Dienstleister', 'Web3Forms',
+          'Wird für die technische Verarbeitung des Kontaktformulars auf der Hauptseite genutzt. Das JavaScript des Browsers sendet eine POST-Anfrage an ', 'https://api.web3forms.com/submit',
+          '. Der Code übermittelt den Namen, den Unternehmensnamen, die E-Mail-Adresse, die ausgewählte Dienstleistungskategorie, die Nachricht und vorausgefüllte Kontaktformularfelder (zum Beispiel Betreff und Empfänger). Der Anbieter kann diese Angaben zur Übermittlung der Nachricht und zum Betrieb seines Dienstes verarbeiten. Die aktuellen Bedingungen von Web3Forms zu Datenschutz, Aufbewahrung und internationalen Übermittlungen sind in der Dokumentation des Anbieters beschrieben; konkrete Zusicherungen des Anbieters oder Aufbewahrungsfristen lassen sich aus dem Projekt nicht ableiten.',
+          'GitHub Pages', 'Stellt das Hosting und die Veröffentlichung der Website bereit. Beim Abruf der Website kann der Anbieter technische Daten zu Webanfragen gemäß seinen eigenen Bedingungen verarbeiten.',
+          'Google Fonts',
+          'Die Schriftarten der Website werden derzeit extern über Google Fonts geladen. Laut den offiziellen Informationen von Google Fonts setzt oder protokolliert die Fonts API keine Cookies. Beim Laden der Schriftarten sendet der Browser jedoch eine technische HTTP-Anfrage, die unter anderem die IP-Adresse, die angeforderte URL und browserbezogene Header enthalten kann. Das Projekt enthält derzeit keine lokalen Kopien der Schriftarten; ein lokales Hosting sollte erst nach Prüfung der benötigten Schriftdateien sowie der Lizenz- und technischen Anforderungen erwogen werden.',
+          '7. Datenübermittlungen außerhalb des EWR',
+          'Einige externe Dienstleister können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten oder von dort aus auf Daten zugreifen. Je nach aktuellem Betrieb und Dokumentation des Anbieters kann dies insbesondere bei Web3Forms, GitHub Pages und Google Fonts relevant sein. Der konkrete Übermittlungsmechanismus, die Garantien und die Aufbewahrungsdauer lassen sich nur anhand externer Dokumentation oder einer rechtlichen Prüfung feststellen.',
+          'Die Bedingungen solcher Übermittlungen und die angewandten Garantien sind anhand der jeweils geltenden Datenschutzhinweise und Vertragsunterlagen des Anbieters sowie des anwendbaren Rechts zu beurteilen. Ein konkreter Übermittlungsmechanismus oder eine rechtliche Garantie kann nur auf Grundlage der aktuellen Dokumentation des jeweiligen Anbieters benannt werden.',
+          '8. Rechte betroffener Personen',
+          'Betroffene Personen können Auskunft über ihre verarbeiteten personenbezogenen Daten sowie deren Berichtigung oder Löschung und die Einschränkung der Verarbeitung verlangen. Sie können der Verarbeitung widersprechen, sofern die Voraussetzungen dafür vorliegen. Eine Einwilligung kann ebenfalls widerrufen werden, wenn die Verarbeitung auf ihr beruht.',
+          'Das Recht auf Datenübertragbarkeit kann ausgeübt werden, wenn die gesetzlichen Voraussetzungen erfüllt sind, insbesondere wenn die Verarbeitung automatisiert erfolgt und auf einer Einwilligung oder einem Vertrag beruht. Anfragen können an die oben genannte E-Mail-Adresse gerichtet werden.',
+          '9. Beschwerden und Rechtsbehelfe', 'Bei einer Verletzung Ihrer Rechte können Sie sich zunächst an den Verantwortlichen wenden. Sie können außerdem eine Beschwerde bei der ',
+          'Ungarischen Nationalen Behörde für Datenschutz und Informationsfreiheit', ' (NAIH, Falk Miksa utca 9–11., 1055 Budapest, Ungarn; ', 'naih.hu', ') einreichen oder den Rechtsweg beschreiten.',
+          '10. Automatisierte Entscheidungsfindung und Profiling', 'Der Verantwortliche setzt derzeit keine automatisierte Entscheidungsfindung ein und führt kein Profiling durch.',
+          '11. Cookies und ähnliche Technologien',
+          'Der Website-Code enthält derzeit weder Google Analytics noch Meta Pixel, Werbetracking oder sonstiges Marketing-Tracking. Die Website nutzt den lokalen Speicher des Browsers, um die Auswahl „Verstanden“ im Hinweisbanner zu speichern; dies ist kein Cookie und dient nicht dem Marketing-Tracking. Die gesonderten externen HTTP-Verbindungen von Google Fonts werden in Abschnitt 6 dieser Hinweise beschrieben. Der Browser und die Hosting-Anbieter können im Rahmen ihres Betriebs technische Daten verarbeiten, die für die Bereitstellung der Website erforderlich sind.',
+          '12. Datensicherheit',
+          'Mit den dem Verantwortlichen zur Verfügung stehenden und von den Dienstleistern bereitgestellten technischen und organisatorischen Maßnahmen bemüht sich der Verantwortliche, Daten zu schützen, Zugriffe zu beschränken und übermittelte Daten abzusichern. Die Datensicherheit hängt auch von den Maßnahmen der eingesetzten Hosting-, Formular- und Netzwerkdienstleister ab.',
+          '13. Änderungen dieser Datenschutzhinweise',
+          'Der Verantwortliche behält sich vor, diese Hinweise insbesondere bei Änderungen der Website, der Dienstleistungen oder der einschlägigen Rechtsvorschriften anzupassen. Zuletzt aktualisiert: ', '10. September 2026.'
+        ]
+      };
+
+      const legalTextNodes = [];
+      const walker = document.createTreeWalker(document.querySelector('.legal-content'), NodeFilter.SHOW_TEXT);
+      while (walker.nextNode()) {
+        if (walker.currentNode.textContent.trim()) legalTextNodes.push(walker.currentNode);
+      }
+
+      const copy = {
+        hu: {
+          title: 'Adatkezelési tájékoztató – Dávid Náray',
+          description: 'Adatkezelési tájékoztató – Dávid Náray.',
+          nav: ['Főoldal', 'Megoldások', 'Munkáim', 'Rólam', 'Folyamat', 'Kapcsolat'],
+          footer: ['Digitális megoldások kisvállalkozásoknak.', 'Főoldal', 'Megoldások', 'Munkáim', 'Rólam', 'Kapcsolat', 'Impresszum'],
+          footerCredit: 'Made with intention.',
+          navLabel: 'Fő navigáció', menuLabel: 'Menü megnyitása', languageLabel: 'Nyelvváltó'
+        },
+        en: {
+          title: 'Privacy Notice – Dávid Náray',
+          description: 'Privacy notice – Dávid Náray.',
+          nav: ['Home', 'Solutions', 'Work', 'About', 'Process', 'Contact'],
+          footer: ['Digital solutions for small businesses.', 'Home', 'Solutions', 'Work', 'About', 'Contact', 'Legal notice'],
+          footerCredit: 'Made with intention.',
+          navLabel: 'Main navigation', menuLabel: 'Open menu', languageLabel: 'Language selector'
+        },
+        de: {
+          title: 'Datenschutzhinweise – Dávid Náray',
+          description: 'Datenschutzhinweise – Dávid Náray.',
+          nav: ['Startseite', 'Leistungen', 'Arbeiten', 'Über mich', 'Ablauf', 'Kontakt'],
+          footer: ['Digitale Lösungen für kleine Unternehmen.', 'Startseite', 'Leistungen', 'Arbeiten', 'Über mich', 'Kontakt', 'Impressum'],
+          footerCredit: 'Mit Bedacht gestaltet.',
+          navLabel: 'Hauptnavigation', menuLabel: 'Menü öffnen', languageLabel: 'Sprachauswahl'
+        }
+      };
+
+      for (const language of ['en', 'de']) {
+        if (translations[language].length !== legalTextNodes.length) {
+          throw new Error(`Incomplete ${language} privacy notice translation: expected ${legalTextNodes.length} text nodes, received ${translations[language].length}.`);
+        }
+      }
+
+      const setText = (elements, values) => elements.forEach((element, index) => { element.textContent = values[index]; });
+      const renderLanguage = (language) => {
+        if (!Object.hasOwn(copy, language)) throw new RangeError(`Unsupported language: ${language}`);
+        document.documentElement.lang = language;
+
+        if (language === 'hu') {
+          legalTextNodes.forEach((node, index) => { node.textContent = translations.hu?.[index] ?? node.textContent; });
+        } else {
+          setText(legalTextNodes, translations[language]);
+        }
+
+        const labels = copy[language];
+        setText(document.querySelectorAll('.nav-links a'), labels.nav);
+        const footer = document.querySelector('.footer');
+        footer.querySelector('.footer-top > p').textContent = labels.footer[0];
+        setText(footer.querySelectorAll('.footer-links a'), labels.footer.slice(1));
+        footer.querySelector('.footer-bottom span:last-child').textContent = labels.footerCredit;
+        document.querySelector('.nav').setAttribute('aria-label', labels.navLabel);
+        document.querySelector('.menu-toggle').setAttribute('aria-label', labels.menuLabel);
+        document.querySelector('.language-switcher').setAttribute('aria-label', labels.languageLabel);
+
+        document.querySelectorAll('.lang-button').forEach((button) => {
+          const active = button.dataset.lang === language;
+          button.classList.toggle('is-active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+      };
+
+      translations.hu = legalTextNodes.map((node) => node.textContent);
+      document.querySelectorAll('.lang-button').forEach((button) => {
+        button.addEventListener('click', () => renderLanguage(button.dataset.lang));
+      });
+      renderLanguage('hu');
+    })();
+  </script>
 </body>
 </html>

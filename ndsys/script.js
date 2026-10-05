@@ -49,7 +49,8 @@ const translations = {
       title: "Nothing has to shout. It just has to connect.",
       before: "Before",
       after: "After",
-      copy: "The tools can stay familiar. The difference is what happens between them."
+      copy: "The tools can stay familiar. The difference is what happens between them.",
+      map: { website: "Website", email: "Email", calendar: "Calendar", files: "Files", tasks: "Tasks", team: "Team" }
     },
     human: {
       eyebrow: "What makes it work",
@@ -184,7 +185,8 @@ const translations = {
       title: "Nem kell hangosnak lennie. Elég, ha kapcsolódik.",
       before: "Előtte",
       after: "Utána",
-      copy: "Az eszközök maradhatnak ismerősek. A különbség az, ami köztük történik."
+      copy: "Az eszközök maradhatnak ismerősek. A különbség az, ami köztük történik.",
+      map: { website: "Weboldal", email: "E-mail", calendar: "Naptár", files: "Fájlok", tasks: "Feladatok", team: "Csapat" }
     },
     human: {
       eyebrow: "Mitől működik",
@@ -319,7 +321,8 @@ const translations = {
       title: "Nichts muss laut sein. Es muss nur verbunden sein.",
       before: "Vorher",
       after: "Nachher",
-      copy: "Die Tools können vertraut bleiben. Der Unterschied liegt in dem, was zwischen ihnen passiert."
+      copy: "Die Tools können vertraut bleiben. Der Unterschied liegt in dem, was zwischen ihnen passiert.",
+      map: { website: "Website", email: "E-Mail", calendar: "Kalender", files: "Dateien", tasks: "Aufgaben", team: "Team" }
     },
     human: {
       eyebrow: "Was es möglich macht",
