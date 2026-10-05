@@ -390,6 +390,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (["hu", "en", "de"].includes(savedLocale)) currentLocale = savedLocale;
   } catch {}
 
+  document.documentElement.lang = currentLocale;
+
   const applyLocale = (locale) => {
     currentLocale = locale;
     document.documentElement.lang = locale;
