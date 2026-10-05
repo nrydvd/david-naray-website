@@ -168,6 +168,7 @@ if($('#contact-form'))$('#contact-form').addEventListener('submit',async event=>
 const cookieBanner=$('#cookie-banner');if(cookieBanner){if(localStorage.getItem('cookie-consent')==='accepted')cookieBanner.hidden=true;$('#cookie-accept').addEventListener('click',()=>{localStorage.setItem('cookie-consent','accepted');cookieBanner.hidden=true})}
 const chatbot=$('.chatbot');
 if(chatbot){
+  let conversationHistory=[];
   const toggle=chatbot.querySelector('.chatbot-toggle');
   const close=chatbot.querySelector('.chat-close');
   const form=chatbot.querySelector('.chat-form');
@@ -216,6 +217,7 @@ if(chatbot){
     const message=input.value.trim();
     if(!message||send.disabled)return;
     appendMessage(message,'user');
+    conversationHistory.push({role:'user',content:message});
     input.value='';
     input.disabled=true;
     send.disabled=true;
@@ -225,12 +227,14 @@ if(chatbot){
       const response=await fetch('https://david-chatbot.david-naray92.workers.dev/',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({message})
+        body:JSON.stringify({message,history:conversationHistory})
       });
       const data=await response.json();
-      if(!response.ok||typeof data.response!=='string'||!data.response.trim())throw new Error('Invalid chatbot response');
+      if(!response.ok||data.success!==true||typeof data.answer!=='string'||!data.answer.trim())throw new Error('Invalid chatbot response');
       loading.remove();
-      appendMessage(data.response.trim(),'assistant');
+      const assistantMessage=data.answer.trim();
+      appendMessage(assistantMessage,'assistant');
+      conversationHistory.push({role:'assistant',content:assistantMessage});
     }catch(error){
       loading.remove();
       appendMessage(getChatCopy().error,'assistant');
