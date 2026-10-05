@@ -2,6 +2,34 @@
   const header = document.querySelector("header");
   if (!header) return;
 
+  const siteLocaleKey = "davidnaray-site-language";
+  const validLanguages = ["hu", "en", "de"];
+  const isNdsys = /^\/ndsys(?:\/|$)/.test(location.pathname);
+  const pageLocaleKeys = {
+    "Business-Website": isNdsys ? "ndsysBusinessWebsiteLocale" : "businessWebsiteLocale",
+    "Egyedi-Rendszerek": isNdsys ? "ndsys-systems-locale" : "systems-locale",
+    "Komplett-Rendszerek": isNdsys ? "ndsys-davidnaray-language" : "davidnaray-language",
+    "landing-pages": isNdsys ? "ndsys-landing-page-locale" : "landing-page-locale"
+  };
+  const pageName = location.pathname.split("/").filter(Boolean).at(-1);
+  let savedLanguage = null;
+  try {
+    savedLanguage = localStorage.getItem(siteLocaleKey);
+    if (!validLanguages.includes(savedLanguage)) {
+      const legacyKeys = Object.values(pageLocaleKeys);
+      const storedLegacyLanguage = legacyKeys
+        .map((key) => localStorage.getItem(key))
+        .find((language) => validLanguages.includes(language));
+      if (storedLegacyLanguage) {
+        savedLanguage = storedLegacyLanguage;
+        localStorage.setItem(siteLocaleKey, savedLanguage);
+      }
+    }
+    if (validLanguages.includes(savedLanguage) && pageLocaleKeys[pageName]) {
+      localStorage.setItem(pageLocaleKeys[pageName], savedLanguage);
+    }
+  } catch {}
+
   const languageSelector = "[data-lang], [data-language], [data-business-website-lang]";
   const languages = ["hu", "en", "de"];
   const buttons = Array.from(header.querySelectorAll(languageSelector)).filter((button) => {
@@ -60,6 +88,12 @@
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const language = button.dataset.lang || button.dataset.language || button.dataset.businessWebsiteLang;
+      if (validLanguages.includes(language)) {
+        try {
+          localStorage.setItem(siteLocaleKey, language);
+          if (pageLocaleKeys[pageName]) localStorage.setItem(pageLocaleKeys[pageName], language);
+        } catch {}
+      }
       buttons.forEach((item) => {
         const active = item === button;
         item.classList.toggle("is-active", active);
@@ -107,4 +141,14 @@
 
   new MutationObserver(() => updateSelectedLanguage(document.documentElement.lang))
     .observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  if (validLanguages.includes(savedLanguage)) {
+    document.addEventListener("DOMContentLoaded", () => {
+      if (document.documentElement.lang === savedLanguage) return;
+      const languageButton = buttons.find((button) =>
+        (button.dataset.lang || button.dataset.language || button.dataset.businessWebsiteLang) === savedLanguage
+      );
+      languageButton?.click();
+    }, { once: true });
+  }
 })();
