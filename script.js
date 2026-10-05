@@ -166,4 +166,78 @@ $('.menu-toggle').addEventListener('click',()=>{$('.nav-panel').classList.toggle
 if($('#question-list'))document.querySelectorAll('.lang-button').forEach(button=>button.addEventListener('click',()=>{currentLanguage=button.dataset.lang;renderDynamic(currentLanguage)}));
 if($('#contact-form'))$('#contact-form').addEventListener('submit',async event=>{event.preventDefault();const form=event.target;const success=$('.form-success');const submitButton=form.querySelector('[type="submit"]');submitButton.disabled=true;success.textContent='';try{const response=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});const result=await response.json();if(!response.ok||!result.success)throw new Error(result.message||'Hiba történt.');success.textContent=content[currentLanguage].form.success;form.reset()}catch(error){success.textContent=content[currentLanguage].form.error}finally{submitButton.disabled=false}});
 const cookieBanner=$('#cookie-banner');if(cookieBanner){if(localStorage.getItem('cookie-consent')==='accepted')cookieBanner.hidden=true;$('#cookie-accept').addEventListener('click',()=>{localStorage.setItem('cookie-consent','accepted');cookieBanner.hidden=true})}
-if($('.chatbot-toggle'))$('.chatbot-toggle').addEventListener('click',()=>{$('.chatbot').classList.toggle('is-open');$('.chatbot-toggle').setAttribute('aria-expanded',$('.chatbot').classList.contains('is-open'))});if($('.chat-close'))$('.chat-close').addEventListener('click',()=>$('.chatbot').classList.remove('is-open'));
+const chatbot=$('.chatbot');
+if(chatbot){
+  const toggle=chatbot.querySelector('.chatbot-toggle');
+  const close=chatbot.querySelector('.chat-close');
+  const form=chatbot.querySelector('.chat-form');
+  const input=chatbot.querySelector('.chat-input');
+  const send=chatbot.querySelector('.chat-send');
+  const messages=chatbot.querySelector('.chat-messages');
+  const copy={
+    hu:{placeholder:'Írd ide az üzeneted…',send:'Üzenet küldése',loading:'Válasz érkezik…',error:'Most nem sikerült választ kapni. Kérlek, próbáld újra.'},
+    en:{placeholder:'Type your message…',send:'Send message',loading:'Waiting for a reply…',error:'I could not get a reply just now. Please try again.'},
+    de:{placeholder:'Schreib deine Nachricht…',send:'Nachricht senden',loading:'Antwort wird geladen…',error:'Ich konnte gerade keine Antwort erhalten. Bitte versuche es erneut.'}
+  };
+  const getChatCopy=()=>copy[document.documentElement.lang]||copy.hu;
+  const updateChatLabels=()=>{
+    const labels=getChatCopy();
+    input.placeholder=labels.placeholder;
+    input.setAttribute('aria-label',labels.placeholder);
+    send.setAttribute('aria-label',labels.send);
+  };
+  const appendMessage=(text,role)=>{
+    const message=document.createElement('div');
+    message.className='chat-message';
+    message.dataset.role=role;
+    message.textContent=text;
+    messages.append(message);
+    messages.scrollTop=messages.scrollHeight;
+    return message;
+  };
+  updateChatLabels();
+  new MutationObserver(updateChatLabels).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  toggle.addEventListener('click',()=>{
+    chatbot.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded',String(chatbot.classList.contains('is-open')));
+  });
+  close.addEventListener('click',()=>{
+    chatbot.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+  });
+  input.addEventListener('keydown',event=>{
+    if(event.key==='Enter'){
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    const message=input.value.trim();
+    if(!message||send.disabled)return;
+    appendMessage(message,'user');
+    input.value='';
+    input.disabled=true;
+    send.disabled=true;
+    const loading=appendMessage(getChatCopy().loading,'assistant');
+    loading.setAttribute('aria-busy','true');
+    try{
+      const response=await fetch('https://david-chatbot.david-naray92.workers.dev/',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({message})
+      });
+      const data=await response.json();
+      if(!response.ok||typeof data.response!=='string'||!data.response.trim())throw new Error('Invalid chatbot response');
+      loading.remove();
+      appendMessage(data.response.trim(),'assistant');
+    }catch(error){
+      loading.remove();
+      appendMessage(getChatCopy().error,'assistant');
+    }finally{
+      input.disabled=false;
+      send.disabled=false;
+      input.focus();
+    }
+  });
+}

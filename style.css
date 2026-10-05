@@ -59,6 +59,7 @@
 	.work #project-grid > .nds-project .nds-button:before{top:calc(50% - 43px)!important;left:calc(50% - 90px)!important;transform:rotate(45deg)!important}
 	.work #project-grid.nds-active > .nds-project .nds-button:before{transform:rotate(0deg)!important}
 }
+.chat-messages{max-height:240px;overflow-y:auto}.chat-form{display:flex;align-items:center;gap:8px;margin-top:14px}.chat-input{flex:1;min-width:0;padding:8px;border:1px solid var(--line);background:var(--cream);color:var(--ink);font-size:12px}.chat-send{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ink);background:var(--green);color:var(--cream);font-size:18px;line-height:1}.chat-send:disabled{opacity:.55;cursor:wait}.chat-message[aria-busy="true"]{opacity:.7}
 @keyframes outer-frame-glow{from{background-position:0% 50%}to{background-position:300% 50%}}
 @keyframes project-border-drift{
 	from{transform:translate(0,0) rotate(0deg) scale(1)}
