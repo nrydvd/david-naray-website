@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Üzenet": "Message",
       "Küldöm": "Send",
       "Digitális megoldások kisvállalkozásoknak.": "Digital solutions for small businesses.",
+      "Komplett rendszerek": "Complete systems",
       "Adatkezelés": "Privacy",
       "Made with intention.": "Made with intention.",
       "© 2026 Dávid Náray": "© 2026 David Naray"
@@ -335,6 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Üzenet": "Nachricht",
       "Küldöm": "Senden",
       "Digitális megoldások kisvállalkozásoknak.": "Digitale Lösungen für kleine Unternehmen.",
+      "Komplett rendszerek": "Komplettsysteme",
       "Adatkezelés": "Datenschutz",
       "Made with intention.": "Mit Sorgfalt gemacht.",
       "© 2026 Dávid Náray": "© 2026 Dávid Náray"
